@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * @author Philémon Globléhi <philemon.globlehi@gmail.com>
  */
 @Configuration
-public class FeignClientConfiguration {
+public class FeignClientConfig {
 
     @Bean
     public FeignClientConfigurer feignClientConfigurer() {
