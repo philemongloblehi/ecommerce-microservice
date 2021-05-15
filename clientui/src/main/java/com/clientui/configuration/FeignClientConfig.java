@@ -1,5 +1,6 @@
 package com.clientui.configuration;
 
+import feign.auth.BasicAuthRequestInterceptor;
 import org.springframework.cloud.openfeign.clientconfig.FeignClientConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +20,10 @@ public class FeignClientConfig {
                 return false;
             }
         };
+    }
 
+    @Bean
+    public BasicAuthRequestInterceptor mBasicAuthRequestInterceptor(){
+        return  new BasicAuthRequestInterceptor("myUsername", "myPassword");
     }
 }
