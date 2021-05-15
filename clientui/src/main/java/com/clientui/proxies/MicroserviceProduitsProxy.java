@@ -12,12 +12,12 @@ import java.util.List;
 /**
  * @author Philémon Globléhi <philemon.globlehi@gmail.com>
  */
-@FeignClient(name = "microservice-produits", configuration = FeignClientConfig.class, decode404 = true)
+@FeignClient(name = "zuul-server")
 @RibbonClient(name = "microservice-produits")
 public interface MicroserviceProduitsProxy {
-    @GetMapping(value = "/Produits")
+    @GetMapping(value = "/microservice-produits/Produits")
     List<ProductBean> listeDesProduits();
 
-    @GetMapping(value = "/Produits/{id}")
+    @GetMapping(value = "/microservice-produits/Produits/{id}")
     ProductBean recupererUnProduit(@PathVariable("id") int id);
 }

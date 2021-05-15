@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 /**
  * @author Philémon Globléhi <philemon.globlehi@gmail.com>
  */
-@FeignClient(name = "microservice-paiement")
+@FeignClient(name = "zuul-server")
 @RibbonClient(name = "microservice-paiement")
 public interface MicroservicePaiementProxy {
-    @PostMapping(value = "/paiement")
+    @PostMapping(value = "/microservice-paiement/paiement")
     ResponseEntity<PaiementBean> payerUneCommande(@RequestBody PaiementBean paiement);
 }
